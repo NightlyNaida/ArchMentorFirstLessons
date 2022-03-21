@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap');
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Kelly Slab';
+  padding: 0;
+  background: radial-gradient(59.09% 176.86% at 50% 50%, #db0000 0%, #dbff00 100%);
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 150px;
+  background: radial-gradient(25% 1362.43% at 52.81% 50%, #dcd001 0%, #db0901 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rotation 3s ease-in-out infinite;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: underline;
+  font-size: 30px;
+  color: #303030;
+  cursor: pointer;
+}
+
+.Empty {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Roboto';
+  font-size: 20px;
+  color: #303030;
+}
+
+img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.phrase-item {
+  font-family: 'Roboto';
+  font-size: 20px;
+  color: #303030;
+  display: flex;
+  gap: 10px;
+}
+
+.phrase-item > p {
+  margin: 0;
+}
+
+.second {
+  font-weight: 600;
+}
+
+.phrases {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(2);
+  }
+}
