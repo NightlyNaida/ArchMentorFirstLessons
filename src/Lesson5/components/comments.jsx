@@ -11,7 +11,6 @@ function Comments (props) {
     return(
         <>
             <Container sx={{
-                width: '800px',
                 borderRadius:3, 
                 boxShadow: '0 0 30px rgba(0,0,0,0.3)', 
                 padding: 5, 
@@ -23,7 +22,7 @@ function Comments (props) {
                 "bottom bottom bottom"
                 `
 
-                }} disableGutters='true'>
+                }} disableGutters={true}>
 
                 <Avatar sx={{width: 65, 
                             height: 65, 
@@ -38,7 +37,7 @@ function Comments (props) {
                                 secondary={props.text} 
                                 sx={{gridArea: 'text'}}/>
 
-                <Container sx={{width:'40px', gridArea: 'delete'}} alignItems="flex-start" disableGutters='true'>
+                <Container sx={{width:'40px', gridArea: 'delete'}} disableGutters={true}>
                     <Tooltip title='Удалить'>
                         <IconButton>
                             <DeleteIcon /> 

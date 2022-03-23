@@ -1,20 +1,48 @@
-import dateOptions from './localDateOptions';
+import './App.css';
+
 import React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import Container from '@mui/material/Container';
+import {CssBaseline, Box} from '@mui/material';
 
 import Comments from './components/comments';
-
+import NewCommentForm from './components/newCommentForm';
 
 
 function App () {
+    
+    let [comments, setComments] = React.useState([]);
+
+    function addNewComment(comment) {
+        setComments([...comments, comment]);         
+    }
+
+    React.useEffect(() => {
+        localStorage.setItem('comments', JSON.stringify(comments));
+    },[comments])
+
+    React.useEffect(() => {
+      let comments = localStorage.getItem('comments');
+      console.log(comments);
+    },[])
+
+    
     return(
-        <div>
-            <CssBaseline>
-                <Container sx={{maxWidth: 20, padding: 4}}>
-                    <Comments fullName="Серёжа Давыдов" email="govna@poel.com" createdAt={new Date(Date.now()).toLocaleDateString('ru', dateOptions)} text="ты пидор ты пидор ты пидор ты пидор ты пидор ты пидор ты пидор ты пидор ты пидор ты пидор ты пидор "></Comments>
-                </Container>
-            </CssBaseline>
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                <Box sx={{  
+                    display:'flex', 
+                    flexDirection: 'column', 
+                    gap: '60px',
+                    width: '800px', 
+                    maxWidth: '800px', 
+                    padding: 4}}>
+                    <Box sx={{
+                        display:'flex', 
+                        flexDirection: 'column', 
+                        gap: '30px', 
+                    }}>
+                    {comments.map((value) => {return <Comments key={value.date} fullName={value.name} email={value.name} createdAt={value.date} text={value.comment}></Comments>})}
+                    </Box>
+                    <NewCommentForm onConfirmComment={addNewComment}></NewCommentForm>
+                </Box>
         </div>
     )
 }
