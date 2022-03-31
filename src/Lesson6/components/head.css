@@ -8,6 +8,8 @@ header {
   grid-template-columns: 2fr 9fr 1fr;
   align-items: center;
   gap: 30px;
+
+  margin-bottom: 70px;
 }
 
 .logo-image {
