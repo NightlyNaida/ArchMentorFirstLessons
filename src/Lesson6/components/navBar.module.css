@@ -2,8 +2,7 @@ nav {
   color: white;
 }
 
-ul {
-  list-style: none;
+.links {
   display: flex;
   gap: 20px;
   position: relative;
@@ -11,11 +10,11 @@ ul {
   padding: 0;
 }
 
-li {
+.link {
   cursor: pointer;
 }
 
-.indicator-container {
+.indicatorContainer {
   width: 100%;
   position: relative;
 }
@@ -28,6 +27,13 @@ li {
   position: absolute;
 }
 
-.indicator-ready {
+.indicatorReady {
   transition: all 0.5s ease-out;
 }
+
+.link{
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
